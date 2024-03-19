@@ -6,7 +6,7 @@ public class Main {
     }
 
     public static boolean shouldWakeUp(boolean isBarking, int clock) {
-        return isBarking && (clock < 8 || clock > 20);
+        return !isBarking && !(clock < 8 || clock > 20);
     }
 
     public static boolean hasTeen(int firstAge, int secondAge, int thirdAge) {
@@ -14,7 +14,14 @@ public class Main {
     }
 
     public static boolean isCatPlaying(boolean isSummer, int temp) {
-        return !isSummer || temp <= 45;
+        if(isSummer && temp >= 45){
+            return false;
+        }
+        else if (temp >= 25 && temp <= 35) {
+            return true;
+        }
+
+        return true;
     }
 
     public static double area(double width, double height) {
